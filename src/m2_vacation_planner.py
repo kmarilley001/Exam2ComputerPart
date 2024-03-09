@@ -111,7 +111,6 @@ def main():
 
     combined_list = starter_items + user_items
 
-    print("Your complete packing list: ")
     for item in combined_list: 
         print(item)
 
