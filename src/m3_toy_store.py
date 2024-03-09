@@ -1,5 +1,5 @@
 ###############################################################################
-# TODO: 1. (3 pts)
+# DONE: 1. (3 pts)
 #
 #   In this module, we are going to create part of a program that could be used
 #   by a toy store to keep track of prices of various toys.
@@ -13,9 +13,11 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
-
+# defines a function that is able to return the string. 
+def get_toy():
+    return input("Please enter a toy: ")
 ###############################################################################
-# TODO: 2. (3 pts)
+# DONE: 2. (3 pts)
 #
 #   For this _TODO_, write a function called get_price() that simply prompts
 #   the user for a price like this:
@@ -26,9 +28,12 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
-
+# same as above TODO but with a float function
+def get_price(): 
+    price = float(input("Please enter a price: "))
+    return price
 ###############################################################################
-# TODO: 3. (5 pts)
+# DONE: 3. (5 pts)
 ##
 #   For this _TODO_, let's first create function called toy_price() that takes
 #   2 parameters:
@@ -43,9 +48,12 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+#Defines a function with two parameters and returns it as a tuple
 
+def toy_price(toy, price): 
+    return tuple((toy, price))
 ###############################################################################
-# TODO: 4. (5 pts)
+# DONE: 4. (5 pts)
 #
 #   For this _TODO_, write a function called calculate_total_price() that takes
 #   1 parameter:
@@ -61,9 +69,15 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+# Defines a function with a single parameter and utilizing the tuple it is able to make total cost
 
+def calculate_total_price(toys): 
+    total_cost = 0
+    for toy, price in toys: 
+        total_cost += price
+    return total_cost
 ###############################################################################
-# TODO: 5. (8 pts)
+# DONE: 5. (8 pts)
 #
 #   For this _TODO_, write a function called main() that will start everything
 #   off. Make sure you use the functions that you defined above where you can.
@@ -89,3 +103,25 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+# defines a main function and incoroporates the past TODOs 
+
+def main(): 
+    toys_list = []
+    while True: 
+        toy = get_toy()
+        if toy.lower() == 'end': 
+            break 
+        price = get_price()
+
+        if price <= 0: 
+            break 
+        toys_list.append(toy_price(toy, price))
+    print("Toy List: ")
+    for toy, price in toys_list: 
+        print(f"{toy}: ${price}")
+    total_cost = calculate_total_price(toys_list)
+    print(f"Total Coast: ${total_cost}")
+
+main()
+
+

@@ -2,7 +2,7 @@
 # print back steps at the end
 
 ###############################################################################
-# TODO: 1. (5 pts)
+# DONE: 1. (5 pts)
 #
 #   In this module, we will be making a tool that allows a user to input the
 #   steps to a recipe. Once the user has entered all the steps, it will print
@@ -29,9 +29,17 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+# define a function called get_step that has a parameter of num which this function asks for user input to put in details for a numbered step.
+
+def get_step(num): 
+    user_input = input(f"Please enter the details for step {num}: ")
+    return f"{num}) {user_input}"
+
+
+
 
 ###############################################################################
-# TODO: 2. (7 pts)
+# DONE: 2. (7 pts)
 #
 #   For this _TODO_, write a function called main() that will start everything
 #   off.
@@ -63,3 +71,19 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+# This defines a main function. This creates steps to be in a list and numbered step starts at 1. Utilizing a while loop user is able to put in input of the steps and when typing end it ends it and the steps are appended to a list. Using a for loop we are abel to print the steps nicely. 
+def main(): 
+    steps = []
+    step_num = 1
+    while True:
+        step = get_step(step_num)
+        if step.lower() == f"{step_num}) {'end'}":
+            break
+        
+        steps.append(step)
+        step_num += 1
+
+    print("Recipe Steps: ")
+    for step in steps: 
+        print(step)
+main()

@@ -2,7 +2,7 @@
 #   prints out a packing list for that vacation type
 
 ###############################################################################
-# TODO: 1. (5 pts)
+# DONE: 1. (5 pts)
 #
 #   For this module, we are going to create a vacation planner that will help
 #   the user plan what they need to bring on vacation.
@@ -28,9 +28,21 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+# Defined a function starter_list with a parameter vacation_type. Create a match  case function that returns the list. 
+
+def starter_list(vacation_type): 
+    match vacation_type: 
+        case "Beach": 
+            return ["swimsuit", "towel", "sunscreen"]
+        case "Mountains": 
+            return ["ski jacket", "gloves", "hat"]
+        case "City": 
+            return ["glasses", "metro card", "map"]
+        case _: 
+            return []
 
 ###############################################################################
-# TODO: 2. (4 pts)
+# DONE: 2. (4 pts)
 #
 #   Now, perhaps the user would like to bring some of their own stuff that they
 #   specify.
@@ -48,9 +60,18 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+# Defined a function that creates a list and utilizing a while loop user is able to iput their own items onto a list. 
 
+def gather_items(): 
+    items = []
+    while True: 
+        user_input = input("Please enter an item: ")
+        if user_input.lower() == 'end': 
+            break 
+        items.append(user_input)
+    return items
 ###############################################################################
-# TODO: 3. (6 pts)
+# DONE: 3. (6 pts)
 #
 #   For this _TODO_, write a function called main() that will start things off.
 #
@@ -76,3 +97,25 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+#Creating a main function that incorporates the two functions listed aboved. Which then ca combine the starter list and the user created list by using a for loop its able to print. 
+
+def main(): 
+    print("Welcome to the Vacation Planner!")
+    vacation_type = input("Pleaser enter your vacation type: ")
+    starter_items = starter_list(vacation_type)
+    for item in starter_items: 
+        print(f"{starter_items}")
+    
+    
+    user_items = gather_items()
+
+    combined_list = starter_items + user_items
+
+    print("Your complete packing list: ")
+    for item in combined_list: 
+        print(item)
+
+    print("Goodbye! Have a wonderful vacay!")
+
+main()
+
