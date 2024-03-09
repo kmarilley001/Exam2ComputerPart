@@ -116,7 +116,7 @@ def main():
         if price <= 0: 
             break 
         toys_list.append(toy_price(toy, price))
-    print("Toy List: ")
+
     for toy, price in toys_list: 
         print(f"{toy}: ${price}")
     total_cost = calculate_total_price(toys_list)
