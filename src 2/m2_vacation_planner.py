@@ -97,7 +97,7 @@ def gather_items():
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
-#Creating a main function that incorporates the two functions listed above. Which then can combine the starter list and the user created list by using a for loop its able to print. 
+#Creating a main function that incorporates the two functions listed aboved. Which then ca combine the starter list and the user created list by using a for loop its able to print. 
 
 def main(): 
     print("Welcome to the Vacation Planner!")

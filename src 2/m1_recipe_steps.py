@@ -71,7 +71,7 @@ def get_step(num):
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
-# This defines a main function. This creates steps to be in a list and numbered step starts at 1. Utilizing a while loop user is able to put in input of the steps and when typing end it ends it and the steps are appended to a list. Using a for loop we are able to print the steps nicely. 
+# This defines a main function. This creates steps to be in a list and numbered step starts at 1. Utilizing a while loop user is able to put in input of the steps and when typing end it ends it and the steps are appended to a list. Using a for loop we are abel to print the steps nicely. 
 def main(): 
     steps = []
     step_num = 1
@@ -83,7 +83,7 @@ def main():
         steps.append(step)
         step_num += 1
 
-    
+    print("Recipe Steps: ")
     for step in steps: 
         print(step)
 main()
